@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+  <h2>{% block title %}Create Ticket{% endblock %}</h2>
+{% endblock %}
+
+
+
+{% block content %}
+<form method="post">
+  <h3>Add Issue</h3>
+  <p>
+    <label for="title">
+      <span>Title: </span>
+    </label>
+    <input type="text" id="title" name="title" value="{{ request.form['title'] }}" required>
+  </p>
+  <p>
+    <label for="task_status">
+      <span>Status: </span>
+    </label>
+    <br><br>
+    <input type="radio" name="task_status" id="BLOCKED" value="BLOCKED" required> Blocked </input><br>
+    <input type="radio" name="task_status" id="TO DEFINE" value="TO DEFINE"> To Define </input><br>
+    <input type="radio" name="task_status" id="TODO" value="TODO"> TODO </input><br>
+    <input type="radio" name="task_status" id="IN PROGRESS" value="IN PROGRESS"> In Progress </input><br>
+    <input type="radio" name="task_status" id="QA REVIEW" value="QA REVIEW"> QA Review </input><br>
+    <input type="radio" name="task_status" id="PO REVIEW" value="PO REVIEW"> PO Review </input><br>
+    <input type="radio" name="task_status" id="DONE" value="DONE"> Done! </input><br>
+  </p>
+  <p>
+    <label for="assignee">
+      <span>Assign to: </span>
+    </label>
+    <input type="text" id="assignee" name="assignee" value="{{ request.form['assignee'] }}" required>
+  </p>
+  <p>
+    <label for="body">
+      <span>Task Description: </span>
+    </label>
+    <textarea id="body" name="body" value="{{ request.form['body'] }}" required></textarea>
+  </p>
+  <div style="float:left;">
+    <a href="/"><input type="button" value="Cancel"></a>
+    <input type="submit" value="Create"> 
+  </div>
+</form>
+{% endblock %}
+

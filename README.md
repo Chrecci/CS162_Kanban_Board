@@ -43,23 +43,23 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 
 ### Virtual Environment
 
-> py -3 -m venv <name_of_environment>
-> <name_of_environment>\Scripts\activate
-> pip install -r requirements.txt
+> py -3 -m venv <name_of_environment> <br />
+> <name_of_environment>\Scripts\activate <br />
+> pip install -r requirements.txt <br />
 
 ### Running application
-> pip install -e .
-> set FLASK_APP=KanbanFlask
-> set FLASK_ENV=development
-> flask init-db
-> flask run
+> pip install -e . <br />
+> set FLASK_APP=KanbanFlask <br />
+> set FLASK_ENV=development <br />
+> flask init-db <br />
+> flask run <br />
 
 ### Testing
 
-> pip install pytest coverage
-> pytest
-> pytest -v (verbose)
->coverage run -m pytest
+> pip install pytest coverage <br />
+> pytest <br />
+> pytest -v (verbose) <br />
+>coverage run -m pytest <br />
 
 *if working from venv, may have to reinstall nnumpy globally from anaconda*
 

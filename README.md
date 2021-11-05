@@ -1,7 +1,7 @@
 # CS162_Kanban_Board
 A kanban board web app built on Flask
 
-Welcome to Chrecci & Co. Kanban Board! Simple Kanban board where you can list taskss, declare their status, and attribute to someone else on your team.
+Welcome to Chrecci & Co. Kanban Board! Simple Kanban board where you can list tasks, declare their status, and attribute to someone else on your team.
 
 ## Key Features
 
@@ -42,6 +42,7 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 ## Installation
 
 ### Virtual Environment
+*If you're reading from direct README.md file, don't forget to ignore <br /> tags*
 
 > py -3 -m venv <name_of_environment> <br />
 > <name_of_environment>\Scripts\activate <br />
@@ -61,7 +62,7 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 > pytest -v (verbose) <br />
 >coverage run -m pytest <br />
 
-*if working from venv, may have to reinstall nnumpy globally from anaconda*
+*if working from venv, may have to reinstall numpy globally from anaconda*
 
 ## HC & LO's
 

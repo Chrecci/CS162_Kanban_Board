@@ -1,4 +1,0 @@
-include KanbanFlask/schema.sql
-graft KanbanFlask/static
-graft KanbanFlask/templates
-global-exclude *.pyc

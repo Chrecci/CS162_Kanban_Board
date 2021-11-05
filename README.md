@@ -8,7 +8,7 @@ Welcome to Chrecci & Co. Kanban Board! Simple Kanban board where you can list ta
 ### Auth
 Users are allowed to create their own accounts and passwords. Once logged in, users gain access to numerous more features! All users can be referenced to within the app, and each username must be unique. There are currently no limits set on passwords, but usernames are limited to 10 characters. Auth is handled by Flask. Users can log out by hovering over their username on the top right corner of the app.
 
-### Kanban Blog
+### Kanban Blog (index)
 After every new issue is made, the change will be reflected in the Home page. This is essentially a blog from where you can see all the tasks that have been assigned, with the most recent ones at the top. Furthermore, all the posts can be clicked upon to expand the post, leading to its actual page. The benefit here is that the home blog can be kept concise, and if a user would like to see more info, they can click on the post title and go to the post page. 
 Additionally, if a post was made by currently logged in user, they are also allowed, and only they are allowed, to edit the post. This is to preserve ownership of posts, and integrity within team members. More will be elaborated upon later under "tickts." Clicking on the main header also leads you back to this page, ensuring all navigation can be fully through the app alone.
 
@@ -63,19 +63,16 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 
 *if working from venv, may have to reinstall nnumpy globally from anaconda*
 
-next steps (11/03/2021):
-- set up main kanban board page
-- set up user tasks assigned to and from user
-- fix more tests
-- more secure auth
-- create .gitignore file
+## HC & LO's
 
-next steps (11/04/2021):
-- set up main kanban board page DONE
-- Cleaned up UI DONE
-- MENU BAR DONE
-- Return back to previous page after canceling DONE
-- set up user tasks assigned to and from user 
-- fix more tests
-- more secure auth
-- create .gitignore file
+### LO
+
+webstandards - Flask's strengths are captured through this project. Its minimalism, Blueprints, code blocks, and url routing are all taken advantage of to make the code simpler, easier to follow, and more efficient (I'd argue this is even a good application of #abstraction). Furthermore, a breadth of languages (Python, CSS, HTML, Javascript) are all effectively utilized to construct a seamless well-functioning web application. A lot of these decisions are justified above, but for example using Javascript scripts to handle functions and avoid convoluting our HTML code. This made sure that I could easily integrate more-complex logic without having to squeeze it all in a few lines, making it hard for readers to follow. This also makes it such that I can easily edit the logic, recycle it elsewhere, add on to it etc (#agile). JS is very well integrated with HTML so this decision was a natural one, and resorting to python would have simply complicated things; also, because JS paired with HTML is the industry standards, using python could needlessly confuse other developers.
+
+#testing - refer to section testing above. Not only does the code pass all the tests, the tests are well-designed, insightful, and genuinely purposeful. The tests help me while I'm coding to make sure I didn't look something over, and each component is working as desired. Tests are well justified and comprehensive, strong application.
+
+#communication - while this was not a team project, this README.md file is thorough in providing potential user's a high level overview of what the app is doing. For a simple web app as this one, I preferred this over over-commenting the code itself. For anyone with any minimal experience in coding, following any file is not hard (its mostly html and css...), but understanding how it all ties together, what the functionalities are etc. are not always immediately obvious. Thus, this write up exists to explain what users should look for and how things work. Furthermore, installation instructions are simple, direct, and easy to follow. Comments are placed where appropriate.
+
+### HC's
+
+constraints - a web-app had to be built in a short time-frame. The first constraint I had to identify was the obvious one of time. Given my constraint, I prioritized which aspects of the project were most important. Considering this is software development, I chose functionality over aesthetics, simplicity and modularity over complications. Thus, I spent just the necessary time on CSS and styling to show adequacy, but spent more time on getting the big features and functionalities across. This application of constraint led to a better and completed project. Furthermore, there were internal constraints. The technology of Flask meant it was unreasonable to resort to other convenient tools in this time. For example, using react.js to handle the front end. Thus, careful time was spent instead on maximizing Flask's features, such as code block, to create a similarly functional frontend. By assessing and breaking down constraints, and choosing to work within those constraints effectively, the whole and quality product could be delivered. 

@@ -1,3 +1,5 @@
+# Handles registration, login, requiring login, and anything auth related
+
 import functools
 
 from flask import (

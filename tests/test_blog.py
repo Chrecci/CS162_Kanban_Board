@@ -9,6 +9,7 @@ def test_index(client, auth):
     assert b"Log In" in response.data
     assert b"Register" in response.data
 
+    # After a user logs in, they should be able to create, but no update option yet on index page
     auth.login()
     response = client.get('/')
     assert b'Log Out' in response.data

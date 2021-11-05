@@ -1,0 +1,26 @@
+next steps (11/03/2021):
+- set up main kanban board page
+- set up user tasks assigned to and from user
+- fix more tests
+- more secure auth
+- create .gitignore file
+
+next steps (11/04/2021):
+- set up main kanban board page DONE
+- Cleaned up UI DONE
+- MENU BAR DONE
+- Return back to previous page after canceling DONE
+- set up user tasks assigned to and from user 
+- fix more tests
+- more secure auth
+- create .gitignore file
+
+next steps (11/05/2021):
+- set up main kanban board page DONE
+- Cleaned up UI DONE
+- MENU BAR DONE
+- Return back to previous page after canceling DONE
+- set up user tasks assigned to and from user DONE
+- fix more tests DONE
+- more secure auth DONE
+- create .gitignore file DONE

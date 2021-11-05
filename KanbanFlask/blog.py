@@ -1,3 +1,5 @@
+# Blog blueprint, from blog itself to any of the posts modifications
+
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -45,6 +47,11 @@ def create():
 
     return render_template('blog/create.html')
 
+'''
+Because the functionality of getting a posts information will probably occur
+throughout the application, it makes sense to separate and abstract it into 
+its own function
+ '''
 def get_post(id, check_author=True):
     post = get_db().execute(
         'SELECT p.id, title, body, task_status, assignee, created, author_id, username'

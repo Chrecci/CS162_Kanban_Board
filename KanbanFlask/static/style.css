@@ -1,5 +1,6 @@
 
 /* press-start-2p-regular - latin */
+/* import a more fun font from fonts folder */
 @font-face {
     font-family: 'Press Start 2P';
     font-style: normal;
@@ -13,6 +14,9 @@
          url('fonts/press-start-2p-v9-latin-regular.svg#PressStart2P') format('svg'); /* Legacy iOS */
   }
 
+/* Ideally this css file, if it gets larger, would be broken out. 
+As an app grows, it is better to modularize everything, so not just one
+blanket CSS file but multiple for differently styled components*/
 html { font-family: 'Press Start 2P'; font-size: 12px; background: #eee; padding: 1rem; }
 p.tab {margin-left: 0.5em;}
 body { max-width: 1280px; margin: 0 auto; background: white; }

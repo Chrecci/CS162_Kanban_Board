@@ -39,7 +39,7 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 - Post Creation (the post creation and deletion process are both very smooth, and implemented the usage of databases strongly)
 - URL-routing
 
-## Installation
+## Installation (Windows 10)
 
 ### Virtual Environment
 *If you're reading from direct README.md file, don't forget to ignore br (newline) tags*

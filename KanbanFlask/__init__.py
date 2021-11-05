@@ -24,12 +24,15 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # simple route and function to test factory
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
 
     from . import db
     db.init_app(app)
 
     # make sure to register all blueprints
-    
     from . import auth
     app.register_blueprint(auth.bp)
 

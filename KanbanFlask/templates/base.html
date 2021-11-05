@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
 
-  <!-- pulls in user's current page address, if on create or update, warn user if they're leaving the page-->
+  <!-- pulls in user's current page address, if on post modification, warn user if they're leaving the page-->
   <h1><a href="/" {% if request.url_rule.endpoint == 'blog.create' or request.url_rule.endpoint == 'blog.update' %} onclick="return confirm('Are you sure? This will delete any changes.')" {% endif %}>Chrecci & Co. Kanban Board</a></h1>
   <ul>
     {% if g.user %}

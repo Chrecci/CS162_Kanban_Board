@@ -42,7 +42,7 @@ Here is a list of subtle features that may not appear immediately obvious but I 
 ## Installation
 
 ### Virtual Environment
-*If you're reading from direct README.md file, don't forget to ignore <br /> tags*
+*If you're reading from direct README.md file, don't forget to ignore '<br />' tags*
 
 > py -3 -m venv <name_of_environment> <br />
 > <name_of_environment>\Scripts\activate <br />

@@ -2,7 +2,15 @@
 
 
 {% block header %}
-  <h2>{% block title %}Create Ticket{% endblock %}</h2>
+  <h2>
+    <div class="topnav" id="topnav">
+      <a href="{{ url_for('blog.index') }}" onclick="return confirm('Are you sure? All changes will be lost.')">Home</a>
+      <a href="{{ url_for('board.main_board') }}" onclick="return confirm('Are you sure? All changes will be lost.')">Main Board</a>
+      {% if g.user %}
+      <a class="active" href="{{ url_for('blog.create') }}" onclick="return confirm('Are you sure? All changes will be lost.')">New Ticket</a>
+      {% endif %}
+    </div>
+  </h2>
 {% endblock %}
 
 
@@ -42,8 +50,9 @@
     <textarea id="body" name="body" value="{{ request.form['body'] }}" required></textarea>
   </p>
   <div style="float:left;">
-    <a href="/"><input type="button" value="Cancel"></a>
-    <input type="submit" value="Create"> 
+    <input class="danger" type="button" value="Cancel" onclick="ConfirmCancel()">
+    <script src="{{url_for('static', filename='create.js')}}"></script>
+    <input type="submit" value="Save">
   </div>
 </form>
 {% endblock %}

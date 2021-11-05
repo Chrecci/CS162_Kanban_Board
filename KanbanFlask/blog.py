@@ -41,7 +41,7 @@ def create():
                 (title, body, task_status, assignee, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('blog.index'))
+            return redirect(url_for('board.main_board'))
 
     return render_template('blog/create.html')
 
@@ -60,6 +60,21 @@ def get_post(id, check_author=True):
         abort(403)
 
     return post
+
+@bp.route('/<int:id>/view_post', methods=('GET',))
+@login_required
+def view_post(id):
+    post = get_db().execute(
+        'SELECT p.id, title, body, task_status, assignee, created, author_id, username'
+        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' WHERE p.id = ?',
+        (id,)
+    ).fetchone()
+
+    if post is None:
+        abort(404, f"Post id {id} doesn't exist.")
+
+    return render_template('blog/view_post.html', post=post)
 
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
 @login_required
@@ -86,7 +101,7 @@ def update(id):
                 (title, body, task_status, assignee, id)
             )
             db.commit()
-            return redirect(url_for('blog.index'))
+            return redirect(url_for('board.main_board'))
 
     return render_template('blog/update.html', post=post)
 
@@ -97,4 +112,5 @@ def delete(id):
     db = get_db()
     db.execute('DELETE FROM post WHERE id = ?', (id,))
     db.commit()
-    return redirect(url_for('blog.index'))
+    return redirect(url_for('board.main_board'))
+

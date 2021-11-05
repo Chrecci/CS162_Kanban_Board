@@ -2,11 +2,16 @@
 <title>{% block title %}{% endblock %} - KanbanFlask</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
-  <h1><a href="/">Chrecci & Co. Kanban Board</a></h1>
+  <h1><a href="/" {% if request.url_rule.endpoint == 'blog.create' or request.url_rule.endpoint == 'blog.update' %} onclick="return confirm('Are you sure? This will delete any changes.')" {% endif %}>Chrecci & Co. Kanban Board</a></h1>
   <ul>
     {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+      <div class="dropdown">
+        <button>{{ g.user['username'] }}</button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('board.user_board') }}" {% if request.url_rule.endpoint == 'blog.create' or request.url_rule.endpoint == 'blog.update' %} onclick="return confirm('Are you sure? This will delete any changes.')" {% endif %}>Your Board</a>
+          <a href="{{ url_for('auth.logout') }}" onclick="return confirm('Are you sure? This will end your session.')">Log Out</a>
+        </div>
+      </div>
     {% else %}
       <li><a href="{{ url_for('auth.register') }}">Register</a>
       <li><a href="{{ url_for('auth.login') }}">Log In</a>

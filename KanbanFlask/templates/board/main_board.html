@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>
+        <div class="topnav" id="topnav">  
+            <a href="{{ url_for('blog.index') }}">Home</a>
+            <a class="active" href="{{ url_for('board.main_board') }}">Main Board</a>
+            {% if g.user %}
+            <a href="{{ url_for('blog.create') }}">New Ticket</a>
+            {% endif %}
+        </div>
+    </h2>
+{% endblock %}
+
+{% block content %}
+{% if g.user %}
+    <div class="row">
+        <div class="column">
+            <h4>Blocked</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "BLOCKED" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 10 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>To Define</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "TO DEFINE" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>TODO</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "TODO" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>In Progress</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "IN PROGRESS" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>QA Review</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "QA REVIEW" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>PO Review</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "PO REVIEW" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h4>Done!</h4>
+            <hr>
+            {% for post in posts %}
+                {% if post['task_status'] == "DONE" %}
+                    <article class="post">
+                    <header>
+                        <div>
+                        <h5 class="cropnowrap"><a href = "{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h5>
+                        
+                        <!-- Ideally this would be user nickname no longer than 8 characters-->
+                        <div class="about cropwrap">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+                        </div>
+                    </header>
+                    <p class="tab">Assigned To: {{ post['Assignee'] }}</p>
+                    </article>
+                    {% if not loop.last %}
+                    <hr class="article">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+{% else %}
+    <h2> Please sign in to view Kanban Board</h2>
+{% endif %}
+{% endblock %}

@@ -44,7 +44,8 @@
       <textarea id="body" name="body" required>{{ request.form['body'] or post['body'] }}</textarea>
     </p>
     <div style="float:left;">
-      <input type="submit" value="Cancel">
+      <input class="danger" type="button" value="Cancel" onclick="ConfirmCancel()">
+      <script src="{{url_for('static', filename='update.js')}}"></script>
       <input type="submit" value="Save">
     </div>
     

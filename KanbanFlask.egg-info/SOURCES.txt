@@ -5,6 +5,7 @@ setup.py
 KanbanFlask/__init__.py
 KanbanFlask/auth.py
 KanbanFlask/blog.py
+KanbanFlask/board.py
 KanbanFlask/db.py
 KanbanFlask/schema.sql
 KanbanFlask.egg-info/PKG-INFO
@@ -13,7 +14,9 @@ KanbanFlask.egg-info/dependency_links.txt
 KanbanFlask.egg-info/not-zip-safe
 KanbanFlask.egg-info/requires.txt
 KanbanFlask.egg-info/top_level.txt
+KanbanFlask/static/create.js
 KanbanFlask/static/style.css
+KanbanFlask/static/update.js
 KanbanFlask/static/fonts/press-start-2p-v9-latin-regular.eot
 KanbanFlask/static/fonts/press-start-2p-v9-latin-regular.svg
 KanbanFlask/static/fonts/press-start-2p-v9-latin-regular.ttf
@@ -26,4 +29,7 @@ KanbanFlask/templates/blog/create.html
 KanbanFlask/templates/blog/index.html
 KanbanFlask/templates/blog/kanbanform.php
 KanbanFlask/templates/blog/update.html
+KanbanFlask/templates/blog/view_post.html
+KanbanFlask/templates/board/main_board.html
+KanbanFlask/templates/board/user_board.html
 KanbanFlask/templates/settings/main_settings.html

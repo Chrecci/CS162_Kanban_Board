@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h2>{% block title %}Posts{% endblock %}</h2>
-  {% if g.user %}
-    <a class="action" href="{{ url_for('blog.create') }}">New</a>
-  {% endif %}
+  <h2>
+    <div class="topnav" id="topnav">
+      <a class="active" href="{{ url_for('blog.index') }}">Home</a>
+      <a href="{{ url_for('board.main_board') }}">Main Board</a>
+      {% if g.user %}
+      <a href="{{ url_for('blog.create') }}">New Ticket</a>
+      {% endif %}
+    </div>
+  </h2>
 {% endblock %}
 
 {% block content %}
@@ -12,7 +17,7 @@
     <article class="post">
       <header>
         <div>
-          <h3>{{ post['title'] }}</h3>
+          <h3><a href="{{ url_for('blog.view_post', id=post['id']) }}">{{ post['title'] }}</a></h3>
           <div class="about">Issued By {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
         </div>
         {% if g.user['id'] == post['author_id'] %}
@@ -24,7 +29,7 @@
       <p class="body">{{ post['body'] }}</p>
     </article>
     {% if not loop.last %}
-      <hr>
+      <hr class="article">
     {% endif %}
   {% endfor %}
 {% endblock %}

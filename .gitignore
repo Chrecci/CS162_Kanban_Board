@@ -1,0 +1,7 @@
+kanban_venv/
+venv/
+.pytest_cache/
+instance/
+*.egg-info/
+__pycache__
+.coverage
